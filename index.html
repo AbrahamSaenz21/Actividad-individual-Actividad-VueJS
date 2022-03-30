@@ -7,6 +7,72 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
+  <body>
+    <header>
+      <h1>Turismo</h1>
+    </header>
+
+    <main>
+    <article>
+	<div id="app">
+      <h2>Lista de mis pasatiempos</h2>
+		<ul>
+			<li v-for="day in daysOfWeek">{{ day }}</li>
+		</ul>
+
+    <button @click="increment">Counter is {{ counter }}</button>
+
+    <h3> Ahora que comparti mis pasatiempos favoritos, !escruibe el tuyo!</h3>
+		<label>Escribe aqui tu pasatiempo favorito: </label><input type="text" v-model="myName" placeholder="Ingrese aqui" style="width: 300px;" />
+    <br>
+    <br>
+    <button @click="toggle">Ingresar</button>
+		<h1 v-if="flag"></h1>
+    <h1 v-else="flag"><label> ¡El pasatiempo {{ myName }} tambien me gusta!</label></h1>
+    
+  </div>
+
+<script src="https://unpkg.com/vue@3"></script>
+      
+<script>
+  Vue.createApp({
+    data(){
+      return{
+        daysOfWeek: ['Ejercicio','Hablar con mis amigos','Ir al cine','Cocinar','Escuchar Musica','Ir de Viaje','Jugar juegos de mesa'],
+        counter: 0,
+        myName: '',
+        flag: true
+      }
+    },
+    methods: {
+      increment(){
+        this.counter++;
+      },
+      toggle(){
+          this.flag = !this.flag;
+      }
+    }
+  }).mount('#app');
+</script>
+      
+  </article>
+</main>
+    
+    <script src="script.js"></script>
+    
+  </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Abraham_Saenz</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="https://unpkg.com/vue@3"></script>
   
@@ -76,7 +142,7 @@
       }
     })
 </script>
-      -->
+      
       
   </article>
 </main>
@@ -95,3 +161,4 @@
     
   </body>
 </html>
+-->
